@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.teamplato.plato.gui.FXMLController">
+    <stylesheets>
+        <URL value="@fxml.css"/>
+    </stylesheets>
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@fxml.css" />
+          </stylesheets>
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="750.0">
+                <children>
+                  <Label layoutX="38.0" layoutY="77.0" text="Selecteer agenda" />
+                  <ChoiceBox fx:id="cmbAgenda" layoutX="195.0" layoutY="72.0" prefWidth="150.0" />
+                  <Label layoutX="38.0" layoutY="146.0" text="Startdatum" />
+                  <DatePicker fx:id="dtpStartDate" layoutX="195.0" layoutY="141.0" prefHeight="31.0" prefWidth="150.0" />
+                  <Label layoutX="38.0" layoutY="207.0" text="Aantal groepen" />
+                  <Group layoutX="69.0" layoutY="4.0">
+                     <children>
+                        <RadioButton fx:id="rbtOneGroup" layoutX="126.0" layoutY="202.0" mnemonicParsing="false" selected="true" text="1">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleRbtGroups" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbtTwoGroups" layoutX="175.0" layoutY="203.0" mnemonicParsing="false" text="2" toggleGroup="$toggleRbtGroups" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutX="565.0" layoutY="44.0" text="Technisch docent" />
+                        <Label layoutX="452.0" layoutY="77.0" text="Groep 1" />
+                        <ChoiceBox fx:id="cmbTeacherTechnicalGr1" layoutX="547.0" layoutY="72.0" prefWidth="150.0" />
+                        <Label disable="true" layoutX="452.0" layoutY="120.0" text="Groep 2" />
+                        <ChoiceBox fx:id="cmbTeacherTechnicalGr2" disable="true" layoutX="547.0" layoutY="115.0" prefWidth="150.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutX="551.0" layoutY="167.0" text="Vaardigheden docent" />
+                        <Label layoutX="452.0" layoutY="203.0" text="Groep 1" />
+                        <ChoiceBox fx:id="cmbTeacherPersonalGr1" layoutX="547.0" layoutY="198.0" prefWidth="150.0" />
+                        <Label disable="true" layoutX="452.0" layoutY="246.0" text="Groep 2" />
+                        <ChoiceBox fx:id="cmbTeacherPersonalGr2" disable="true" layoutX="547.0" layoutY="241.0" prefWidth="150.0" />
+                     </children>
+                  </Group>
+                  <Group>
+                     <children>
+                        <Label layoutX="601.0" layoutY="290.0" text="Lokaal" />
+                        <Label layoutX="452.0" layoutY="323.0" text="Groep 1" />
+                        <ChoiceBox fx:id="cmbRoomGr1" layoutX="547.0" layoutY="318.0" prefWidth="150.0" />
+                        <Label disable="true" layoutX="452.0" layoutY="366.0" text="Groep 2" />
+                        <ChoiceBox fx:id="cmbRoomGr2" disable="true" layoutX="547.0" layoutY="361.0" prefWidth="150.0" />
+                     </children>
+                  </Group>
+                  <Group layoutX="3.0" layoutY="-22.0">
+                     <children>
+                        <Button fx:id="btnCancel" layoutX="511.0" layoutY="455.0" mnemonicParsing="false" text="Annuleer" />
+                        <Button fx:id="btnConfirm" layoutX="618.0" layoutY="455.0" mnemonicParsing="false" text="Bevestig" />
+                     </children>
+                  </Group>
+                </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
