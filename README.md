@@ -45,4 +45,30 @@ In sum, teams will be asked to take the following steps:
 4. Ask for a pull request review.
 5. If everything is in order, the changes will be merged into the master branch.
 
-[Click here](https://guides.github.com/introduction/flow/) for a good GitHub workflow overview.
+[Click here](https://guides.github.com/introduction/flow/) for a good GitHub workflow overview
+
+# Maven & File structure
+The pom.xml is the file which 'builds' our project. It stands for **P**roject **O**bject **M**odel. It contains maven plugin, dependencies, configuration details, source and target directories and the entry point (class) to the application. 
+
+In short, the file structure is as follows:
+1. src
+    + main
+      + java
+        + com
+          + teamplato
+            + plato
+              + dal
+              + bol
+              + gui
+              + PlaTo.java (entry point)
+      + resources - has the same structure underneath it as main. Contains the fxml and css files.
+    + test - has the same structure underneath it as main. Contains the test classes (or should contain...).
+2. target
+  + classes
+    + com.teamplato.plato --> dal/bol/gui
+    
+It can be daunting, but it isn't. Consider the following: all the classes you make should be placed in either the **dal**, **bol** or **gui** sub-directories under **main**. Any static files (.css/.fxml/.html/.js/.sh/.c/.ts/.md/....) should be placed in the same relative directory as the class that uses that file, but under **resources** instead. 
+
+Likewise, the relevant test classes should be placed in the same relative directory as the class or package that it tests, but under **test**. If you quickly want to try something out in a temporary class, please do not call this file `Test.java`. Maven will detect it as a test class and stuff will break.
+
+Lastly, when you run `mvnw clean javafx:run`, maven will take everything from the src directory, and place it with the correct structure in the target directory. In other words, this will contain the binary files.
