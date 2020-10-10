@@ -8,7 +8,7 @@ This readme briefly describes how to get PlaTo up and running, considering:
 Open up a command prompt (Windows+R, type `cmd`, press enter) and check your java version (`java -version` and `javac -version`).
 
 You're good to go if your version is 14.x.x.
-Otherwise, [download JDK-14](https://download.oracle.com/otn-pub/java/jdk/14.0.2+12/205943a0976c4ed48cb16f1043c5c647/jdk-14.0.2_windows-x64_bin.exe) and follow the installation process.
+Otherwise, [download JDK-14 Windows x64 Installer](https://www.oracle.com/java/technologies/javase-jdk14-downloads.html) and follow the installation process.
 
 Next, type `systemvariables` (or in dutch: `omgevingsvariabelen`), which will lead you to the following screen
 
@@ -20,5 +20,13 @@ Press on your `Path` variable and press `edit`. In the dialog, press `new` and t
 
 You're all set! Confirm and exit.
 
-## 2 - NetBeans
+## 2 - setting up your NetBeans IDE and importing the PlaTo project.
 [Download Apache NetBeans 12.1](https://ftp.nluug.nl/internet/apache/netbeans/netbeans/12.1/Apache-NetBeans-12.1-bin-windows-x64.exe) and follow the installation process.
+
+Next, clone this repository to a destination of your choosing. If you are unfamiliar with git and/or GitHub, press the `Clone` button on the [landing page](https://github.com/TELangelaar/plato) and press `Download Zip`.
+
+Open NetBeans and open the project you just cloned/downloaded. Press `Run` (F6). 
+
+Congrats, you can start working on PlaTo!
+
+
