@@ -57,9 +57,9 @@ In short, the file structure is as follows:
         + com
           + teamplato
             + plato
-              + dal
-              + bol
-              + gui
+              + dal --> Data Access Layer. Retrieves data from the database and makes it accessible to the bol.
+              + bol --> Business Object Layer. Creates new objects to hold data and handles all the logic.
+              + gui --> User Interface Layer. Holds the Model-View-Controllers and handles the fxml files.
               + PlaTo.java (entry point)
       + resources - has the same structure underneath it as main. Contains the fxml and css files.
     + test - has the same structure underneath it as main. Contains the test classes (or should contain...).
