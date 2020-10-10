@@ -46,6 +46,3 @@ In sum, teams will be asked to take the following steps:
 5. If everything is in order, the changes will be merged into the master branch.
 
 [Click here](https://guides.github.com/introduction/flow/) for a good GitHub workflow overview.
-
-## 4 - Test
-this is a test change to test my update-readme-branch
