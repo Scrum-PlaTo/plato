@@ -36,7 +36,7 @@ The second option probably only works if Maven is already installed, but since I
 Congrats, you can start working on PlaTo!
 
 ## 3 - Start contributing to the project - GitHub starting guide.
-(IE, for the hackathon, my proposal is to create separate branches based on the different modules that teams will be working on. We can provide access to these branches for these teams only, and they can create pull requests once they are finished. 
+(IE, for the hackathon, my proposal is to create separate branches based on the different modules that teams will be working on. We can provide access to these branches for these teams only, and they can create pull requests once they are finished.
 
 In sum, teams will be asked to take the following steps:
 1. Fork the project (or work on your designated branch).
@@ -47,3 +47,5 @@ In sum, teams will be asked to take the following steps:
 
 [Click here](https://guides.github.com/introduction/flow/) for a good GitHub workflow overview.
 
+## 4 - Test
+this is a test change to test my update-readme-branch
