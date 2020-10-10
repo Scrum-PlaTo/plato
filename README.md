@@ -64,8 +64,8 @@ In short, the file structure is as follows:
       + resources - has the same structure underneath it as main. Contains the fxml and css files.
     + test - has the same structure underneath it as main. Contains the test classes (or should contain...).
 2. target
-  + classes
-    + com.teamplato.plato --> dal/bol/gui
+    + classes
+        + com.teamplato.plato --> dal/bol/gui
     
 It can be daunting, but it isn't. Consider the following: all the classes you make should be placed in either the **dal**, **bol** or **gui** sub-directories under **main**. Any static files (.css/.fxml/.html/.js/.sh/.c/.ts/.md/....) should be placed in the same relative directory as the class that uses that file, but under **resources** instead. 
 
