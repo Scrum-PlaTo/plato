@@ -36,7 +36,7 @@ The second option probably only works if Maven is already installed, but since I
 Congrats, you can start working on PlaTo!
 
 ## 3 - Start contributing to the project - GitHub starting guide.
-(IE, for the hackathon, my proposal is to create separate branches based on the different modules that teams will be working on. We can provide access to these branches for these teams only, and they can create pull requests once they are finished.
+(IE, for the hackathon, my proposal is to create separate branches based on the different modules that teams will be working on.) We can provide access to these branches for these teams only, and they can create pull requests once they are finished. UPDATE: creating protected branches with specific user access can only be achieved when a repository is owned by an organisation. Furthermore, we would be able to create several repo administrators instead of only one owner.
 
 In sum, teams will be asked to take the following steps:
 1. Fork the project (or work on your designated branch).
