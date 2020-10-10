@@ -12,7 +12,7 @@ Otherwise, [download JDK-14 Windows x64 Installer](https://www.oracle.com/java/t
 
 Next, type `systemvariables` (or in dutch: `omgevingsvariabelen`), which will lead you to the following screen
 
-![Systemvariables](https://github.com/TELangelaar/plato/blob/master/plato-howto/systemvariables.png)
+![Systemvariables](https://github.com/TELangelaar/deb-install/blob/master/plato-howto/systemvariables.png)
 
 In `Uservariables` (`Gebruikersvariabelen`), click on `new`. A dialog opens up. For the name, enter `JAVA_HOME`. For the value, press on `Search in Active Directory` and point it to your JDK-14 installation directory (eg C:/Program Files/Java/jdk-14.0.2 ). Confirm.
 
