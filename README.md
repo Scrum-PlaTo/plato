@@ -25,7 +25,9 @@ You're all set! Confirm and exit.
 
 Next, clone this repository to a destination of your choosing. If you are unfamiliar with git and/or GitHub, press the `Clone` button on the [landing page](https://github.com/TELangelaar/plato) and press `Download Zip`.
 
-Open NetBeans and open the project you just cloned/downloaded. Press `Run` (F6). 
+Two options to run the application:
+1. Open up a command prompt, go to the project folder (`YOURPATH/plato`) and type `mvnw clean javafx:run`.
+2. ~~Open NetBeans and open the project you just cloned/downloaded. Press `Run` (F6).~~ IM NOT SURE IF THIS WORKS YET 
 
 Congrats, you can start working on PlaTo!
 
