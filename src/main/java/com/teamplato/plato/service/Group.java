@@ -1,43 +1,52 @@
-package com.teamplato.plato.bol;
+package com.teamplato.plato.service;
 
 public class Group {
-	private int number;
-	private String name;
-	private int amountOfPeople;
-	
-	//empty constructor
-	public Group () {
-	};
-	
-	//create constructor
-	public Group (int number, String name, int amountOfPeople) {
-		this.setNumber(number);
-		this.setName(name);
-		this.setAmountOfPeople(amountOfPeople);
-	}
-	//getters en setters
-	public int getNumber() {
-		return number;
-	}
+    private final static String DEFAULT_NAME = "Groep 1";
+    private final static int DEFAULT_PEOPLE = 8;
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    private int number;
+    private String name;
+    private int amountOfPeople;
 
-	public String getName() {
-		return name;
-	}
+    public Group() {
+        this(DEFAULT_NAME);
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Group(String name) {
+        this(name, DEFAULT_PEOPLE);
+    }
 
-	public int getAmountOfPeople() {
-		return amountOfPeople;
-	}
+    public Group(String name, int amountOfPeople) {
+        this.setName(name);
+        this.setAmountOfPeople(amountOfPeople);
+    }
 
-	public void setAmountOfPeople(int amountOfPeople) {
-		this.amountOfPeople = amountOfPeople;
-	}
-	
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAmountOfPeople() {
+        return amountOfPeople;
+    }
+
+    public void setAmountOfPeople(int amountOfPeople) {
+        this.amountOfPeople = amountOfPeople;
+    }
+
+    public String toString(){
+        return name;
+    }
+
 }

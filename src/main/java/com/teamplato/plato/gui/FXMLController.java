@@ -17,9 +17,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
-import com.teamplato.plato.bol.Teacher;
-import com.teamplato.plato.dal.DAO;
-import com.teamplato.plato.dal.Teachers_DAO;
+import com.teamplato.plato.service.*;
 
 /**
  * FXML Controller class
@@ -27,10 +25,19 @@ import com.teamplato.plato.dal.Teachers_DAO;
  * @author nicks
  */
 public class FXMLController implements Initializable {
-    
-    ObservableList<Teacher> list;
-    DAO teachersDAO = new Teachers_DAO();
-    
+
+    private TeachersDAOImpl teachersDAO = new TeachersDAOImpl();
+    private ObservableList<Teacher> teacherObservableList = FXCollections.observableArrayList(teachersDAO.getAll());
+
+    private RoomsDAOImpl roomsDAO = new RoomsDAOImpl();
+    private ObservableList<Room> roomObservableList = FXCollections.observableArrayList(roomsDAO.getAll());
+
+    private GroupsDAOImpl groupsDAO = new GroupsDAOImpl();
+    private ObservableList<Group> groupObservableList = FXCollections.observableArrayList(groupsDAO.getAll());
+
+    private CoursesDAOImpl coursesDAO = new CoursesDAOImpl();
+    private ObservableList<Course> courseObservableList = FXCollections.observableArrayList(coursesDAO.getAll());
+
     @FXML
     private ChoiceBox<?> cmbAgenda;
     @FXML
@@ -42,7 +49,7 @@ public class FXMLController implements Initializable {
     @FXML
     private RadioButton rbtTwoGroups;
     @FXML
-    private ChoiceBox<?> cmbTeacherTechnicalGr1;
+    private ChoiceBox<Teacher> cmbTeacherTechnicalGr1;
     @FXML
     private ChoiceBox<?> cmbTeacherTechnicalGr2;
     @FXML
@@ -50,7 +57,7 @@ public class FXMLController implements Initializable {
     @FXML
     private ChoiceBox<?> cmbTeacherPersonalGr2;
     @FXML
-    private ChoiceBox<?> cmbRoomGr1;
+    private ChoiceBox<Room> cmbRoomGr1;
     @FXML
     private ChoiceBox<?> cmbRoomGr2;
     @FXML
@@ -64,13 +71,23 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Adds all the teachers to the GUI/View
-        setcmbTeacherPersonalGr1();
-    }    
-    
-    //method for showing database table in the GUI/View
-    private void setcmbTeacherPersonalGr1(){
-        list = FXCollections.observableArrayList(teachersDAO.getAll());
-        cmbTeacherPersonalGr1.setItems(list);
+        setCmbTeacherPersonalGr1();
+        setCmbTeacherTechnicalGr1();
+
+        setCmbRoomGr1();
     }
-    
+
+    //method for showing database table in the GUI/View
+    private void setCmbTeacherPersonalGr1(){
+        cmbTeacherPersonalGr1.setItems(teacherObservableList);
+    }
+
+    private void setCmbTeacherTechnicalGr1() {
+        cmbTeacherTechnicalGr1.setItems(teacherObservableList);
+    }
+
+    private void setCmbRoomGr1() {
+        cmbRoomGr1.setItems(roomObservableList);
+    }
+
 }

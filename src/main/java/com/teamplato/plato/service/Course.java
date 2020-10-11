@@ -1,77 +1,104 @@
-package com.teamplato.plato.bol; 
+package com.teamplato.plato.service;
 
 import java.time.*;
 
 public class Course {
+    private final static int DEFAULT_COURSE_CODE = 001;
+    private final static String DEFAULT_NAME = "Python";
+    private final static int DEFAULT_DAY_NUMBER = 20;
+    private final static String DEFAULT_START_TIME = "09:00";
+    private final static int DEFAULT_DURATION = 3;
 
-	private int number;
-	private int courseCode;
-	private String name;
-	private int dayNumber;
-	private LocalTime startTime;
-	private Duration duration;
+    private int number;
+    private int courseCode;
+    private String name;
+    private int dayNumber;
+    private LocalTime startTime;
+    private Duration duration;
 
-	// create empty constructor
-	public Course() {
+    public Course() {
+        this(DEFAULT_COURSE_CODE);
+    }
 
-	}
+    public Course(int courseCode) {
+        this(courseCode, DEFAULT_NAME);
+    }
 
-	// create constructor
-	public Course(int number, int courseCode, String name, int dayNumber, LocalTime startTime, Duration duration) {
-		this.setNumber(number);
-		this.setCourseCode(courseCode);
-		this.setName(name);
-		this.setDayNumber(dayNumber);
-		this.setStartTime(startTime);
-		this.setDuration(duration);
-	}
+    public Course(String name) {
+        this(DEFAULT_COURSE_CODE, name);
+    }
 
-	public int getNumber() {
-		return number;
-	}
+    public Course(int courseCode, String name) {
+        this(courseCode, name, DEFAULT_DAY_NUMBER);
+    }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    public Course(int courseCode, String name, int dayNumber) {
+        this(courseCode, name, dayNumber, DEFAULT_START_TIME);
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Course(int courseCode, String name, int dayNumber, String startTime) {
+        this(courseCode, name, dayNumber, startTime, DEFAULT_DURATION);
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Course(int courseCode, String name, int dayNumber, String startTime, int hours) {
+        this.setCourseCode(courseCode);
+        this.setName(name);
+        this.setDayNumber(dayNumber);
+        this.setStartTime(startTime);
+        this.setDuration(hours);
+    }
 
-	public int getDayNumber() {
-		return dayNumber;
-	}
+    public int getNumber() {
+        return number;
+    }
 
-	public void setDayNumber(int dayNumber) {
-		this.dayNumber = dayNumber;
-	}
+    public int getCourseCode() {
+        return courseCode;
+    }
 
-	public LocalTime getStartTime() {
-		return startTime;
-	}
+    public void setCourseCode(int courseCode) {
+        this.courseCode = courseCode;
+    }
 
-	public void setStartTime(LocalTime startTime) {
-		this.startTime = startTime;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public Duration getDuration() {
-		return duration;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setDuration(Duration duration) {
-		this.duration = duration;
-	}
+    public int getDayNumber() {
+        return dayNumber;
+    }
 
-	public int getCourseCode() {
-		return courseCode;
-	}
+    public void setDayNumber(int dayNumber) {
+        this.dayNumber = dayNumber;
+    }
 
-	public void setCourseCode(int courseCode) {
-		this.courseCode = courseCode;
-	}
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = LocalTime.parse(startTime);
+    }
+
+    public Duration getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int hours) {
+        this.duration = Duration.ofHours(hours);
+    }
+
+    public void setDuration(int hours, int minutes) {
+        this.duration = Duration.ofMinutes(minutes + (hours * 60));
+    }
+
+    @Override
+    public String toString(){
+        return name;
+    }
 
 }

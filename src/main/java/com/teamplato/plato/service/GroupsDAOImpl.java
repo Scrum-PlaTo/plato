@@ -1,45 +1,43 @@
 package com.teamplato.plato.service;
 
-import java.util.ArrayList;
 import com.teamplato.plato.database_dummy.DatabaseDummy;
+import java.util.ArrayList;
 
 /**
  *
- * @author nicks
+ * @author Thijme.Langelaar
  */
-public class TeachersDAOImpl implements DAO<Teacher> {
+public class GroupsDAOImpl implements DAO<Group> {
     private static DatabaseDummy dbDummy = DatabaseDummy.getInstance();
-    private static ArrayList<Teacher> teachers = dbDummy.getTeacherList();
+    private static ArrayList<Group> groups = dbDummy.getGroupList();
 
     @Override
-    public ArrayList<Teacher> getAll() {
-        //connect to database from databaseconnection
-        //get teachers from dummydatabase
-        return teachers;
+    public ArrayList<Group> getAll() {
+        return groups;
     }
 
     @Override
-    public void update(Teacher teacher) {
+    public Group get(String name) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Teacher teacher) {
+    public void update(Group t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void add(Teacher teacher) {
+    public void delete(Group t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void create(Teacher teacher) {
+    public void add(Group t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Teacher get(String name) {
+    public void create(Group t) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

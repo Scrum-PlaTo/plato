@@ -1,56 +1,51 @@
-package com.teamplato.plato.bol;
+package com.teamplato.plato.service;
 
 public class Teacher {
+    private final static String CALCO_DOMAIN = "@calco.nl";
 
-	private int number; 
-	private String name; 
-	private String email;
+    private int number;
+    private String name;
+    private String email;
 
-	//create empty constructor 
-	public Teacher() {
-		
-	};
-        
-        public Teacher(String name) {
-            this.setName(name);
-        }
-	
-	//create constructor 
-	public Teacher(int number, String name, String email) {
-		
-		this.setNumber(number);
-		this.setName(name); 
-		this.setEmail(email); 
-		
-	}
+    //create empty constructor
+    public Teacher() {
 
-	public int getNumber() {
-		return number;
-	}
+    }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    public Teacher(String name) {
+        //concat name and add domain.
+        this(name, name.replaceFirst(" ", ".").replaceAll(" ", "").concat(CALCO_DOMAIN));
+    }
 
-	public String getName() {
-		return name;
-	}
+    //create constructor
+    public Teacher(String name, String email) {
+        this.setName(name);
+        this.setEmail(email);
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public int getNumber() {
+        return number;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	};	
-        
-        @Override
-        public String toString() {
-            return name;
-        }
-		
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

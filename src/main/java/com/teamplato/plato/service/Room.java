@@ -1,54 +1,67 @@
-package com.teamplato.plato.bol;
+package com.teamplato.plato.service;
 
 public class Room {
-	private int number;
-	private int roomNO;
-	private String name;
-	private int capacity;
+    private final static int DEFAULT_ROOM_NO = -1;
+    private final static String DEFAULT_NAME = "Rabobank";
+    private final static int DEFAULT_CAPACITY = 10;
 
-	// create empty constructor
-	public Room() {
-	};
+    private int number;
+    private int roomNO;
+    private String name;
+    private int capacity;
 
-	// create constructor
-	public Room(int number, int roomNO, String name, int capacity) {
-		this.setNumber(number);
-		this.setRoomNO(roomNO);
-		this.setName(name);
-		this.setCapacity(capacity);
-	}
+    public Room() {
+        this(DEFAULT_ROOM_NO);
+    }
 
-	// getters en setters
-	public int getNumber() {
-		return number;
-	}
+    public Room(int roomNO) {
+        this(roomNO, DEFAULT_NAME);
+    }
 
-	public void setNumber(int number) {
-		this.number = number;
-	}
+    public Room(String name){
+        this(DEFAULT_ROOM_NO, name);
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Room(int roomNO, String name) {
+        this(roomNO, name, DEFAULT_CAPACITY);
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public Room(int roomNO, String name, int capacity) {
+        this.setRoomNO(roomNO);
+        this.setName(name);
+        this.setCapacity(capacity);
+    }
 
-	public int getCapacity() {
-		return capacity;
-	}
+    public int getRoomNO(){
+        return roomNO;
+    }
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
+    public void setRoomNO(int roomNO){
+        this.roomNO = roomNO;
+    }
 
-	public int getRoomNO() {
-		return roomNO;
-	}
+    public int getNumber() {
+        return number;
+    }
 
-	public void setRoomNO(int roomNO) {
-		this.roomNO = roomNO;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }
