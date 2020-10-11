@@ -10,6 +10,8 @@ public class CoursesDAOImpl implements DAO<Course> {
     private static DatabaseDummy dbDummy = DatabaseDummy.getInstance();
     private static ArrayList<Course> courses = dbDummy.getCourseList();
 
+    //TODO: constructors
+
     @Override
     public ArrayList<Course> getAll() {
         return courses;
